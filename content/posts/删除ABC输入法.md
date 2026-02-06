@@ -14,7 +14,7 @@ draft: false
 
 在列表中（⌘-F）搜索 ABC，并删除所有包含 ABC 的文件并<mark style="background:#fff88f">保存</mark>，重启 Mac。
 
-![](/images/attachments/1Capture_2026-02-01_17.51.34.png)
+![]({{< absURL "images/attachments/1Capture_2026-02-01_17.51.34.png" >}})
 
 > [!INFO] 原理
 > 1. **ABC 是系统内置输入法，无法真正卸载**（是否显示、是否可用，完全由配置文件决定）
