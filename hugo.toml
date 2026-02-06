@@ -4,6 +4,7 @@ title = "麦金塔"
 theme = "PaperMod"
 
 [params]
+  hideMeta = true
   showDate = false
   enableSearch = true
   disableSpecial1stPost = true
