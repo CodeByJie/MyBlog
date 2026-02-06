@@ -6,7 +6,9 @@ draft: false
 
 在访达（⌘-⇧-G）前往下面路径找到对应文件，并用 Xcode 软件打开。
 
-> [!INFO] 注：路径中 mac 替换为你的 Mac 用户名。
+{{< callout type="info" >}}
+注：路径中 mac 替换为你的 Mac 用户名。
+{{< /callout >}}
 
 ```
 /Users/mac/Library/Preferences/com.apple.HITo0lbox.plist
@@ -16,10 +18,14 @@ draft: false
 
 ![](/myblog/images/attachments/1Capture_2026-02-01_17.51.34.png)
 
-> [!INFO] 原理
-> 1. **ABC 是系统内置输入法，无法真正卸载**（是否显示、是否可用，完全由配置文件决定）
-> 2. **com.apple.HIToolbox.plist** **是输入法的“总配置表”**（记录了启用哪些输入法）
+{{< callout type="info" >}}
+原理
+1. **ABC 是系统内置输入法，无法真正卸载**（是否显示、是否可用，完全由配置文件决定）
+2. **com.apple.HIToolbox.plist** **是输入法的“总配置表”**（记录了启用哪些输入法）
+{{< /callout >}}
 
-> [!WARNING] 注意
-> - 系统升级或重置输入法，ABC 可能会回来
-> - 行为安全，但不保证长期有效
+{{< callout type="warning" >}}
+注意
+- 系统升级或重置输入法，ABC 可能会回来
+- 行为安全，但不保证长期有效
+{{< /callout >}}

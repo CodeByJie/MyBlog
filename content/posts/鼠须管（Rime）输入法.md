@@ -10,6 +10,10 @@ draft: false
 | 词库  | [霧凇拼音词库](https://github.com/iDvel/rime-ice)                  |
 | 主题  | [蓝色遐想](https://github.com/hunter-ji/blue-reverie-rime-theme) |
 
-> [!INFO] 雾凇词库下载 Full.zip
+{{< callout type="info" >}}
+雾凇词库下载 Full.zip
+{{< /callout >}}
 
-> [!INFO] 将雾凇词库解压后的文件以及蓝色遐想主题代替鼠须管的原有设置文件，重新部署即可。
+{{< callout type="info" >}}
+将雾凇词库解压后的文件以及蓝色遐想主题代替鼠须管的原有设置文件，重新部署即可。
+{{< /callout >}}
