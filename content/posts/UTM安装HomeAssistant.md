@@ -11,7 +11,7 @@ draft: false
 ## 创建虚拟机
 
 > [!INFO] 创建虚拟机
-> ![](/myblog/images/attachments/1Capture_2026-02-03_19.07.27 1.png)
+> ![](/myblog/images/attachments/1Capture_2026-02-03_19.07.27-1.png)
 
 > [!INFO] 选择虚拟化
 > ![](/myblog/images/attachments/1Capture_2026-02-03_19.07.42.png)
@@ -29,7 +29,7 @@ draft: false
 > ![](/myblog/images/attachments/1Capture_2026-02-03_19.08.59.png)
 
 > [!INFO] 共享目录无需设置
-> ![](/myblog/images/attachments/1Capture_2026-02-03_19.09.23 1.png)
+> ![](/myblog/images/attachments/1Capture_2026-02-03_19.09.23-1.png)
 
 > [!INFO] 给虚拟机起名 HomeAssistant，勾选打开虚拟机设置。
 > ![](/myblog/images/attachments/1Capture_2026-02-03_19.55.34.png)
