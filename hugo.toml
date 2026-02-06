@@ -4,6 +4,7 @@ title = "麦金塔"
 theme = "PaperMod"
 
 [params]
+  disableSpecial1stPost = true
   defaultTheme = "light"
   showReadingTime = true
   showToc = true
