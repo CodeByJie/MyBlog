@@ -10,31 +10,32 @@ code {
   font-family: "SF Mono", "Fira Code", "JetBrains Mono", "Menlo", "Consolas", monospace;
 }
 
-/* Wrapper */
-.highlight {
+/* Outer wrapper */
+.codeframe {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--code-border);
   background: var(--code-bg);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  position: relative;
 }
 
-/* Top bar */
-.highlight::before {
+/* Header bar */
+.codeframe::before {
   content: attr(data-lang);
   display: block;
-  padding: 0.5rem 1rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  padding-left: 3.5rem;
   background: var(--code-header);
   color: var(--code-header-text);
   font-weight: 600;
   text-transform: lowercase;
   letter-spacing: 0.03em;
-  position: relative;
-  padding-left: 3.5rem;
 }
 
 /* macOS dots */
-.highlight::after {
+.codeframe::after {
   content: "";
   position: absolute;
   left: 1.1rem;
@@ -46,12 +47,25 @@ code {
   box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
 }
 
-/* Code area */
-.highlight pre {
+/* Inner highlight reset */
+.codeframe .highlight {
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.codeframe .highlight pre {
   margin: 0;
   padding: 1.2rem 1.4rem;
   background: var(--code-bg) !important;
   color: #e6e6e6;
+}
+
+/* Copy button placement */
+.codeframe .copy-code-button {
+  top: 0.5rem;
+  right: 0.75rem;
 }
 
 /* Inline code */

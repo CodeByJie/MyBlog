@@ -1,4 +1,4 @@
 {{- $lang := .Type | default "" -}}
-<div class="highlight" data-lang="{{ $lang }}">
+<div class="codeframe" data-lang="{{ $lang }}">
   {{- highlight .Inner $lang "" -}}
 </div>
