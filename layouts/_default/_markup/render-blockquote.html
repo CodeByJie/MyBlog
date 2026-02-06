@@ -1,25 +1,14 @@
 {{- $text := .Text -}}
-{{- $types := dict
-  "info" "INFO"
-  "warning" "WARNING"
-  "note" "NOTE"
-  "tip" "TIP"
-  "important" "IMPORTANT"
-  "caution" "CAUTION"
--}}
-{{- $callout := "" -}}
-{{- range $k, $v := $types -}}
-  {{- if in $text (printf "[!%s]" $v) -}}
-    {{- $callout = $k -}}
-  {{- end -}}
-{{- end -}}
-
-{{- if $callout -}}
-  {{- $label := index $types $callout -}}
-  {{- $text = replaceRE (printf `(?s)<p>\s*\[!%s\]\s*` $label) "<p>" $text -}}
-  <blockquote class="callout callout-{{ $callout }}">
-    <div class="callout-title">{{ $label | title }}</div>
-    <div class="callout-body">{{ $text | safeHTML }}</div>
+{{- $re := `(?s)^<p>\s*\[!([A-Z]+)\]\s*` -}}
+{{- $m := findRESubmatch $re $text -}}
+{{- if and $m (ge (len $m) 2) -}}
+  {{- $rawType := index $m 1 -}}
+  {{- $type := lower $rawType -}}
+  {{- $label := $rawType -}}
+  {{- $body := replaceRE $re "<p>" $text -}}
+  <blockquote class="callout callout-{{ $type }}">
+    <div class="callout-title">{{ $label }}</div>
+    <div class="callout-body">{{ $body | safeHTML }}</div>
   </blockquote>
 {{- else -}}
   <blockquote>{{ $text | safeHTML }}</blockquote>
