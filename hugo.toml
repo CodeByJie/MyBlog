@@ -4,7 +4,6 @@ title = "我的技术博客"
 theme = "PaperMod"
 
 [params]
-  disableThemeToggle = true
   defaultTheme = "light"
   showReadingTime = true
   showToc = true
