@@ -1,0 +1,48 @@
+.callout {
+  --callout-bg: #f6f8fa;
+  --callout-border: #d0d7de;
+  --callout-title: #1f2328;
+  --callout-text: #24292f;
+  border: 1px solid var(--callout-border);
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: var(--callout-bg);
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--callout-title);
+  margin-bottom: 0.4rem;
+}
+
+.callout-body p {
+  margin: 0.5rem 0;
+  color: var(--callout-text);
+}
+
+.callout-info { --callout-border: #1f6feb; --callout-bg: #eef4ff; }
+.callout-warning { --callout-border: #9a6700; --callout-bg: #fff8e6; }
+.callout-note { --callout-border: #57606a; --callout-bg: #f6f8fa; }
+.callout-tip { --callout-border: #1a7f37; --callout-bg: #eef8f1; }
+.callout-important { --callout-border: #8250df; --callout-bg: #f4efff; }
+.callout-caution { --callout-border: #cf222e; --callout-bg: #ffebe9; }
+
+@media (prefers-color-scheme: dark) {
+  .callout {
+    --callout-bg: #0d1117;
+    --callout-border: #30363d;
+    --callout-title: #c9d1d9;
+    --callout-text: #c9d1d9;
+  }
+  .callout-info { --callout-border: #2f81f7; --callout-bg: #0b214a; }
+  .callout-warning { --callout-border: #d29922; --callout-bg: #2d1e00; }
+  .callout-note { --callout-border: #8b949e; --callout-bg: #161b22; }
+  .callout-tip { --callout-border: #3fb950; --callout-bg: #0f2a12; }
+  .callout-important { --callout-border: #a371f7; --callout-bg: #1f1233; }
+  .callout-caution { --callout-border: #f85149; --callout-bg: #2a0a0a; }
+}
