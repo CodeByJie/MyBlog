@@ -1,0 +1,19 @@
+/* Hard override in case dark class is still applied */
+body.dark {
+  --theme: #ffffff;
+  --entry: #ffffff;
+  --primary: #1f2328;
+  --secondary: #4f5b66;
+  --tertiary: #e6e8eb;
+  --content: #1f2328;
+  --hljs-bg: #f6f8fa;
+  --code-bg: #f6f8fa;
+  --border: #d0d7de;
+  background: #ffffff;
+  color: #1f2328;
+}
+
+body.dark .header,
+body.dark .nav {
+  background: #ffffff;
+}
