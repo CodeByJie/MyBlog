@@ -15,8 +15,8 @@
 {{- end -}}
 
 <div class="callout callout-{{ $type }}">
-  <div class="callout-title">
+  <div class="callout-content">
     <span class="callout-icon">{{ $icon | safeHTML }}</span>
+    <div class="callout-body">{{ .Inner | markdownify }}</div>
   </div>
-  <div class="callout-body">{{ .Inner | markdownify }}</div>
 </div>

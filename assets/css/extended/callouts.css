@@ -1,7 +1,6 @@
 .callout {
   --callout-bg: #f6f8fa;
   --callout-border: #d0d7de;
-  --callout-title: #1f2328;
   --callout-text: #24292f;
   border: 1px solid var(--callout-border);
   border-left-width: 4px;
@@ -11,17 +10,18 @@
   margin: 1rem 0;
 }
 
-.callout-title {
+.callout-content {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  align-items: flex-start;
+  gap: 0.6rem;
 }
 
 .callout-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
   display: inline-flex;
+  margin-top: 0.15rem;
+  flex: 0 0 auto;
 }
 
 .callout-icon svg {
@@ -30,9 +30,12 @@
   fill: var(--callout-border);
 }
 
-.callout-body p {
-  margin: 0.5rem 0;
+.callout-body {
   color: var(--callout-text);
+}
+
+.callout-body p {
+  margin: 0.4rem 0;
 }
 
 .callout-info { --callout-border: #1f6feb; --callout-bg: #eef4ff; }
@@ -47,7 +50,6 @@
   .callout {
     --callout-bg: #0d1117;
     --callout-border: #30363d;
-    --callout-title: #c9d1d9;
     --callout-text: #c9d1d9;
   }
   .callout-info { --callout-border: #2f81f7; --callout-bg: #0b214a; }
