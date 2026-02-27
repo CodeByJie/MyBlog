@@ -8,6 +8,7 @@ import IconHash from "@/assets/icons/IconHash.svg";
 import getUniqueTags from "@/utils/getUniqueTags";
 import getPostsByTag from "@/utils/getPostsByTag";
 import { SITE } from "@/config";
+import { withBase } from "@/utils/route";
 
 const posts = await getCollection("blog");
 
@@ -56,7 +57,7 @@ const maxCount = Math.max(...tagsWithCount.map(t => t.count));
           const intensity = count / maxCount;
           return (
             <a
-              href={`/tags/${tag}/`}
+              href={withBase(`/tags/${tag}/`)}
               transition:name={tag}
               class="tag-card group"
               data-tag-card

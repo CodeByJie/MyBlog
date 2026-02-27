@@ -7,12 +7,22 @@ import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import Logo from "@/assets/logo/devosfera.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
+import { stripBaseFromPathname, withBase } from "@/utils/route";
 
 const { pathname } = Astro.url;
+const homeHref = withBase("/");
+const postsHref = withBase("/posts");
+const tagsHref = withBase("/tags");
+const aboutHref = withBase("/about");
+const searchHref = withBase("/search");
+const archivesHref = withBase("/archives");
+const galleriesHref = withBase("/galleries");
 
 // Remove trailing slash from current pathname if exists
 const currentPath =
-  pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+  stripBaseFromPathname(
+    pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname
+  );
 
 const isActive = (path: string) => {
   const currentPathArray = currentPath.split("/").filter(p => p.trim());
@@ -43,7 +53,7 @@ const isActive = (path: string) => {
     >
       <!-- Logo -->
       <a
-        href="/"
+        href={homeHref}
         class="group relative z-20 flex items-center gap-2 text-xl font-bold tracking-tight sm:text-2xl"
       >
         <!-- <span class="nav-logo-text">{SITE.title}</span> -->
@@ -71,28 +81,28 @@ const isActive = (path: string) => {
         <ul class="hidden sm:flex sm:flex-row sm:items-center sm:gap-1">
           <li>
             <a
-              href="/posts"
+              href={postsHref}
               class:list={["nav-link", { "nav-active": isActive("/posts") }]}
               >Posts</a
             >
           </li>
           <li>
             <a
-              href="/tags"
+              href={tagsHref}
               class:list={["nav-link", { "nav-active": isActive("/tags") }]}
               >Tags</a
             >
           </li>
           <li>
             <a
-              href="/about"
+              href={aboutHref}
               class:list={["nav-link", { "nav-active": isActive("/about") }]}
               >About</a
             >
           </li>
           <li class="flex items-center">
             <a
-              href="/search"
+              href={searchHref}
               class:list={["nav-link", { "nav-active": isActive("/search") }]}
               title="Ir a búsqueda">Search</a
             >
@@ -101,7 +111,7 @@ const isActive = (path: string) => {
             SITE.showArchives && (
               <li>
                 <LinkButton
-                  href="/archives"
+                  href={archivesHref}
                   class:list={[
                     "nav-link",
                     { "nav-active": isActive("/archives") },
@@ -119,7 +129,7 @@ const isActive = (path: string) => {
             SITE.showGalleries && (
               <li>
                 <LinkButton
-                  href="/galleries"
+                  href={galleriesHref}
                   class:list={[
                     "nav-link",
                     { "nav-active": isActive("/galleries") },
@@ -183,7 +193,7 @@ const isActive = (path: string) => {
         <div class="mobile-menu-inner">
           <nav class="mobile-nav-links">
             <a
-              href="/posts"
+              href={postsHref}
               class:list={["mobile-nav-link", { active: isActive("/posts") }]}
               style="--i:0"
             >
@@ -191,7 +201,7 @@ const isActive = (path: string) => {
               <span>Posts</span>
             </a>
             <a
-              href="/tags"
+              href={tagsHref}
               class:list={["mobile-nav-link", { active: isActive("/tags") }]}
               style="--i:1"
             >
@@ -199,7 +209,7 @@ const isActive = (path: string) => {
               <span>Tags</span>
             </a>
             <a
-              href="/about"
+              href={aboutHref}
               class:list={["mobile-nav-link", { active: isActive("/about") }]}
               style="--i:2"
             >
@@ -209,7 +219,7 @@ const isActive = (path: string) => {
             {
               SITE.showArchives && (
                 <a
-                  href="/archives"
+                  href={archivesHref}
                   class:list={[
                     "mobile-nav-link",
                     { active: isActive("/archives") },
@@ -224,7 +234,7 @@ const isActive = (path: string) => {
             {
               SITE.showGalleries && (
                 <a
-                  href="/galleries"
+                  href={galleriesHref}
                   class:list={[
                     "mobile-nav-link",
                     { active: isActive("/galleries") },

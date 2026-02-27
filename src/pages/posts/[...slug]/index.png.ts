@@ -1,4 +1,6 @@
 import type { APIRoute } from "astro";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getPath } from "@/utils/getPath";
 import { generateOgImageForPost } from "@/utils/generateOgImages";
@@ -27,8 +29,23 @@ export const GET: APIRoute = async ({ props }) => {
     });
   }
 
-  const buffer = await generateOgImageForPost(props as CollectionEntry<"blog">);
-  return new Response(new Uint8Array(buffer), {
-    headers: { "Content-Type": "image/png" },
-  });
+  try {
+    const buffer = await generateOgImageForPost(props as CollectionEntry<"blog">);
+    return new Response(new Uint8Array(buffer), {
+      headers: { "Content-Type": "image/png" },
+    });
+  } catch {
+    const fallbackImage = SITE.ogImage || "og.png";
+    const fallbackImagePath = join(process.cwd(), "public", fallbackImage);
+    const fallbackBuffer = await readFile(fallbackImagePath);
+    const contentType = fallbackImage.endsWith(".webp")
+      ? "image/webp"
+      : fallbackImage.endsWith(".svg")
+        ? "image/svg+xml"
+        : "image/png";
+
+    return new Response(new Uint8Array(fallbackBuffer), {
+      headers: { "Content-Type": contentType },
+    });
+  }
 };
